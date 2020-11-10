@@ -231,6 +231,6 @@ def dom(rr, image, gameid, name = ""):
         if image["type"] == "video":
             mode = _media_video
         if image["type"] == "steam-widget":
-            mode = _media_video
+            mode = _media_steam_widget
 
     return mode(rr, image_meta, gameid, name)
