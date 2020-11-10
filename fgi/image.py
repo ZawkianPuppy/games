@@ -216,7 +216,7 @@ def _media_video(rr, image, gameid, name):
     return elm + "</video>"
 
 def _media_steam_widget(rr, image, gameid, name):
-    return '<iframe sandbox="allow-popups allow-popups-to-escape-sandbox allow-scripts allow-forms allow-same-origin" src="https://store.steampowered.com/widget/{image["id"]}/" frameborder="0" width="100%" height="190"></iframe>'
+    return f'<iframe sandbox="allow-popups allow-popups-to-escape-sandbox allow-scripts allow-forms allow-same-origin" src="https://store.steampowered.com/widget/{image["id"]}/" frameborder="0" width="100%" height="190"></iframe>'
 
 def dom(rr, image, gameid, name = ""):
     mode = _media_image
