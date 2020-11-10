@@ -215,6 +215,9 @@ def _media_video(rr, image, gameid, name):
         elm += '<source src="%s" type="%s">' % (i["uri"], i["mime"])
     return elm + "</video>"
 
+def _media_steam_widget(rr, image, gameid, name):
+    return '<iframe sandbox="allow-popups allow-popups-to-escape-sandbox allow-scripts allow-forms allow-same-origin" src="https://store.steampowered.com/widget/{image["id"]}/" frameborder="0" width="100%" height="190"></iframe>'
+
 def dom(rr, image, gameid, name = ""):
     mode = _media_image
     image_meta = image
@@ -226,6 +229,8 @@ def dom(rr, image, gameid, name = ""):
         if image["type"] == "youtube":
             mode = _media_youtube
         if image["type"] == "video":
+            mode = _media_video
+        if image["type"] == "steam-widget":
             mode = _media_video
 
     return mode(rr, image_meta, gameid, name)
